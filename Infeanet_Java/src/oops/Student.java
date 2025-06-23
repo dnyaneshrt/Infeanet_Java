@@ -13,6 +13,14 @@ public class Student {
         System.out.println("Student constructor called!!! " + name);
     }
 
+    static char gender='M';
+
+    //static method
+    public static void display()
+    {
+        System.out.println("i am from static method");
+    }
+
     //instance variables
     int id;
     String name;
