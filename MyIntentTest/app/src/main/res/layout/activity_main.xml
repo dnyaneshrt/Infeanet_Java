@@ -57,24 +57,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_youtube"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:text="youtube"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/youtube"
             android:padding="10dp"
             android:layout_margin="5dp"
           />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_paytm"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:text="paytm"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/paytm"
             android:padding="10dp"
             android:layout_margin="5dp"
            />

@@ -17,10 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button  btn_next, btn_youtube, btn_paytm;
+    Button  btn_next;
     EditText et_number,et_name;
 
-    ImageButton btn_dial;
+    ImageButton btn_dial, btn_youtube, btn_paytm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,27 @@ public class MainActivity extends AppCompatActivity {
                 String name=et_name.getText().toString();
                 intent.putExtra("birthdayboy",name);
                 startActivity(intent);
+            }
+        });
+
+        btn_youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //explicit intent used to call third party activities from our application.
+//                Intent intent=getPackageManager().getLaunchIntentForPackage("com.truecaller");
+//                startActivity(intent);
+
+                try {
+
+                    Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.msedcl.app");
+                    startActivity(launchIntent);
+                }catch(Exception e)
+                {
+                    Intent intent=new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://www.youtube.com/"));
+                    startActivity(intent);
+                }
             }
         });
     }
