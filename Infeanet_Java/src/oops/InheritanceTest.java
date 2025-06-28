@@ -16,7 +16,7 @@ class Parent
                 ", className='" + className + '\'' +
                 '}');
     }
-    public final void marriage()
+    public  void marriage()
     {
         System.out.println("Om will get married with : SwaranjaliLaxi/ jaylaltia");
     }
@@ -28,11 +28,11 @@ class Child extends Parent
  {
      System.out.println("child class");
  }
-//final methods cannot be overridden
-//    public void marriage()
-//    {
-//        System.out.println("Om will get married with : katrina/ shradha");
-//    }
+//   final methods cannot be overridden
+    public void marriage()
+    {
+        System.out.println("Om will get married with : katrina/ shradha");
+    }
 }
 public class InheritanceTest {
     public static void main(String[] args) {
@@ -41,5 +41,10 @@ public class InheritanceTest {
 //        child.showParentDetails();// allowed
 //        System.out.println(child.bank_balance);
         child.marriage();
+
+         Parent parent=new Child();  //holding child class object into parent class reference is called as upcasting..
+//        parent.showChildDetails();  // won't allow you to access child class properties.
+         parent.marriage();//parent or child method will invoke???
+        //runtime polymorphism.
     }
 }

@@ -3,7 +3,7 @@ package exceptions;
 import java.util.Scanner;
 
 public class ExTest1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("Exception test 1");
 //        int[] numbers=new int[5];
 //        numbers[2]=25;
@@ -42,11 +42,9 @@ public class ExTest1 {
             System.out.println("imp code");
         }
 
-//        try {
-//            Thread.sleep(100);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+
+            Thread.sleep(100);
+
 
 
     }
