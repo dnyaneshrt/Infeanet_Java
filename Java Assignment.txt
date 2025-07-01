@@ -96,12 +96,12 @@ InsufficientBalanceException extends Exception
 InvalidInputException extends Exception
 
 Requires complete design thinking
-✅ Multiple classes and relationships
-✅ Proper OOPS implementation
-✅ Extensive exception handling
-✅ Collections design and usage
-✅ Console menu-based operations with validations
-✅ Testing multiple flows and edge cases
+- Multiple classes and relationships
+- Proper OOPS implementation
+- Extensive exception handling
+- Collections design and usage
+- Console menu-based operations with validations
+- Testing multiple flows and edge cases
 
 
 Future Upgrade Plan (Phase-2 & 3)
