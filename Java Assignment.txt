@@ -1,0 +1,135 @@
+ Assignment Title: “Banking Console Application (Phase-1)”
+
+Problem Statement (Phase-1)
+Develop a console-based banking system with the following functionalities:
+
+1. Customer Management
+-Register new customers with unique Customer IDs.
+-Store customer details: Name, Date of Birth, Gender, Contact No, Email, Address.
+
+2.  Account Management
+-Open new bank accounts (Savings/Current) for registered customers.
+-Account details: Account No, Account Type, Balance, Opening Date.
+-Support multiple accounts per customer.
+
+3. Transactions
+-Deposit Money.
+-Withdraw Money (with minimum balance check for savings).
+-Transfer money between accounts (within same customer or different customers).
+
+4. View Operations
+-View account details by account number.
+-View all accounts of a customer by customer ID.
+-View transaction history of an account.
+
+5. Search and Sort
+-Search customers by name or contact number.
+-Sort customer list by name or account balance (implement using Comparator and Comparable).
+
+6. Exception Handling
+-Handle exceptions like:
+-Insufficient balance
+-Invalid account number or customer ID
+-Invalid input formats
+
+Use of
+1. OOPS Concepts: Classes, Objects, Inheritance, Polymorphism, Abstraction, Encapsulation, Interfaces.
+2. Strings: Use String, StringBuilder, StringBuffer where applicable (e.g. input parsing, display formatting, report generation).
+3. Collections: Store data using suitable collections (HashMap for customer-account mapping, ArrayList for transactions).
+4. File Handling (Optional for extension)
+5. Save and load customer and account data from text files for persistence between runs (for now, you can keep data in-memory).
+
+ Implementation Guidelines
+-Design Classes like:
+Customer (POJO with basic details)
+Account (Abstract class with subclasses SavingsAccount, CurrentAccount)
+Transaction (POJO with transaction ID, type, amount, date)
+Bank (Main class with main method + business logic + data storage)
+BankService Interface (define operations for implementation)
+Custom Exceptions for business rules (e.g. InsufficientBalanceException)
+
+
+Sample UML Diagram Starter
+
+<<interface>> BankService
+    + registerCustomer()
+    + openAccount()
+    + deposit()
+    + withdraw()
+    + transfer()
+    + viewAccount()
+    + viewCustomer()
+
+Bank implements BankService
+    - HashMap<String, Customer>
+    - HashMap<String, Account>
+
+Customer
+    - customerId
+    - name
+    - dob
+    - gender
+    - contactNo
+    - email
+    - address
+    - List<Account>
+
+Account (abstract)
+    - accountNo
+    - accountType
+    - balance
+    - openingDate
+    + deposit()
+    + withdraw()
+
+SavingsAccount extends Account
+CurrentAccount extends Account
+
+Transaction
+    - transactionId
+    - accountNo
+    - type
+    - amount
+    - date
+
+InsufficientBalanceException extends Exception
+InvalidInputException extends Exception
+
+Requires complete design thinking
+✅ Multiple classes and relationships
+✅ Proper OOPS implementation
+✅ Extensive exception handling
+✅ Collections design and usage
+✅ Console menu-based operations with validations
+✅ Testing multiple flows and edge cases
+
+
+Future Upgrade Plan (Phase-2 & 3)
+Phase-2: Java 8
+
+-Use Streams for filtering, searching, sorting.
+-Use Lambdas for comparators, menu operations.
+-Implement functional interfaces for business operations.
+
+Phase-3: Spring Boot Upgrade
+
+-Create REST APIs for all banking operations.
+-Use Spring Data JPA for DB persistence.
+-Integrate with a database (H2/MySQL).
+
+
+ Starter Class Template to refer:
+
+public class MainBankApp {
+    public static void main(String[] args) {
+        Bank bank = new Bank();
+        // Show menu and call bank methods
+    }
+}
+
+
+Deliverables (for your self-tracking)
+- UML Class Diagram (draw on paper or tool like draw.io)
+- Complete Source Code with clean packages
+- Sample run outputs (console screenshots)
+- Test cases for invalid inputs and edge scenarios
